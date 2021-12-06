@@ -331,7 +331,7 @@
                     <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="productoData" width="100%" cellspacing="0">
-                                 <button type="button" class="btn btn-outline-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
+                                 <button type="button" id="btnNuevoRegistro" class="btn btn-outline-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -399,7 +399,8 @@
             </div>
         </div>
     </div>
-
+    
+    <?php require_once("modalmantenimiento.php");?>
     <!-- Bootstrap core JavaScript-->
     <script src="../../public/vendor/jquery/jquery.min.js"></script>
     <script src="../../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -414,7 +415,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.1.0/b-colvis-2.1.0/b-html5-2.1.0/datatables.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script src="mntproducto.js"></script>

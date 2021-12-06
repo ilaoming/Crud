@@ -65,4 +65,9 @@ function eliminar(prod_id) {
     console.log(prod_id);
   }
 
+
+  $(document).on("click","#btnNuevoRegistro", function(){
+    $('#modalTitulo').html('Nuevo Registro');
+    $('#modalMantenimiento').modal('show');
+});
 //init();
