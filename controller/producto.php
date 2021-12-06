@@ -4,7 +4,7 @@
 
     $producto = new Producto();
 
-    try {
+
         switch($_GET["op"]){
             case "listar":
                 $datos=$producto->getProducto();
@@ -12,8 +12,8 @@
                 foreach($datos as $row){
                     $subArray = array();
                     $subArray[] = $row["prod_nom"];
-                    $subArray[] = '<button type="button" class="btn btn-outline-primary" onClick="editar('.$row["prod_id"].');" id="'.$row["prod_id"].'"><i class="fas fa-edit"></i></button>';
-                    $subArray[] = '<button type="button" class="btn btn-outline-danger" onClick="eliminar('.$row["prod_id"].');" id="'.$row["prod_id"].'"><i class="fas fa-trash-alt"></i></button>';
+                    $subArray[] = '<button type="button" class="btn btn-outline-primary" onClick="editar('.$row["prod_id"].');" id="'.$row["prod_id"].'"><i class="fas fa-edit"></i> Editar</button>';
+                    $subArray[] = '<button type="button" class="btn btn-outline-danger" onClick="eliminar('.$row["prod_id"].');" id="'.$row["prod_id"].'"><i class="fas fa-trash-alt"></i> Eliminar</button>';
                     $data[] = $subArray;
                 }
     
@@ -26,10 +26,33 @@
                 echo json_encode($results);
     
                 break;
+
+                case "guardarEditar":
+                    $datos=$producto->getProductoById($_POST["prod_id"]);
+                    if(empty($_POST["prod_id"])){
+                        if(is_array($datos)==true and count($datos)==0){
+                            $producto->insertProducto($_POST["prod_nom"]);
+                        }
+                    }else{
+                        $producto->updateProducto($_POST["prod_id"],$_POST["prod_nom"]);
+                    }
+                    break;
+        
+                case "mostrar":
+                    $datos=$producto->getProductoById($_POST["prod_id"]);
+                    if(is_array($datos)==true and count($datos)>0){
+                        foreach($datos as $row){
+                            $output["prod_id"] = $row["prod_id"];
+                            $output["prod_nom"] = $row["prod_nom"];
+                        }
+                    }
+                    break;
+        
+                case "eliminar":
+                    $producto->deleteProducto($_POST["prod_id"]);
+                    break;
         }
-    } catch (Exception $e) {
-        print($e);
-    };
+
 
 
 

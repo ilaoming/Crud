@@ -10,8 +10,8 @@ $(document).ready(function(){
     tabla=$('#productoData').dataTable({
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
-	    dom: 'Bfrtip',//Definimos los elementos del control de tabla
-	    buttons: [
+	    dom:'Bfrtip',//Definimos los elementos del control de tabla
+	    buttons: [     
 		            'copyHtml5',
 		            'excelHtml5',
 		            'csvHtml5',
@@ -57,5 +57,12 @@ $(document).ready(function(){
 	}).DataTable();
 });
 
+function eliminar(prod_id) { 
+    console.log(prod_id);
+ }
 
-init();
+ function editar(prod_id) { 
+    console.log(prod_id);
+  }
+
+//init();

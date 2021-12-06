@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>CRUD con PHP, MySQL y JS en el Modelo MVC
+    </title>
 
     <!-- Custom fonts for this template-->
     <link href="../../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.1.0/b-colvis-2.1.0/b-html5-2.1.0/datatables.min.css"/>
+  
 
     <!-- Custom styles for this template-->
     <link href="../../public/css/sb-admin-2.min.css" rel="stylesheet">
@@ -328,10 +328,10 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Mantenimiento / Producto</h1>
                     <p class="h6 mb-4 text-gray-800">Desde esta ventana podra dar mantenimiento a productos</p>
-                    
                     <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="productoData" width="100%" cellspacing="0">
+                                 <button type="button" class="btn btn-outline-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -408,8 +408,14 @@
     <script src="../../public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
+
     <script src="../../public/js/sb-admin-2.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.1.0/b-colvis-2.1.0/b-html5-2.1.0/datatables.min.js"></script>
+
+
 
     <script src="mntproducto.js"></script>
 
