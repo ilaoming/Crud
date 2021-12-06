@@ -13,7 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="../../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
@@ -326,7 +326,32 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Mantenimiento / Producto</h1>
+                    <p class="h6 mb-4 text-gray-800">Desde esta ventana podra dar mantenimiento a productos</p>
+                    
+                    <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="productoData" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+    
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -384,6 +409,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../../public/js/sb-admin-2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+
+    <script src="mntproducto.js"></script>
 
 </body>
 

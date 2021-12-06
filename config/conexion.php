@@ -6,7 +6,7 @@
         {
             try {
                 
-                $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=crud","root","");
+                $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=crud","root","root");
                 return $conectar;
 
 
