@@ -330,11 +330,12 @@
                     <p class="h6 mb-4 text-gray-800">Desde esta ventana podra dar mantenimiento a productos</p>
                     <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="productoData" width="100%" cellspacing="0">
+                                <table class="table table-bordered" name="productoData" id="productoData" width="100%" cellspacing="0">
                                  <button type="button" id="btnNuevoRegistro" class="btn btn-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
+                                            <th>Descripcion</th>
                                             <th>Editar</th>
                                             <th>Eliminar</th>
                                         </tr>
@@ -342,6 +343,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Nombre</th>
+                                            <th>Descripcion</th>
                                             <th>Editar</th>
                                             <th>Eliminar</th>
                                         </tr>

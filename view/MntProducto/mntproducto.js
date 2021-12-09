@@ -57,6 +57,11 @@ $(document).ready(function(){
 	}).DataTable();
 });
 
+function refreshTable() {
+    $('#productoData').DataTable().clear();
+    $('#productoData').DataTable().ajax.reload();
+}
+
 function eliminar(prod_id){
   swal.fire({
     title: 'Eliminar',
@@ -70,11 +75,8 @@ function eliminar(prod_id){
     if (result.isConfirmed) {
 
         $.post("../../controller/producto.php?op=eliminar",{prod_id:prod_id},function (data) {
+            refreshTable();
         });
-        $('#productoData').DataTable().ajax.reload();
-
-        
-        
 
         swal.fire(
             'Eliminado!',
@@ -86,7 +88,14 @@ function eliminar(prod_id){
 }
 
  function editar(prod_id) { 
-    console.log(prod_id);
+    $('#modalTitulo').html('Editar');
+    $.post("../../controller/producto.php?op=mostrar",{prod_id:prod_id},function (data) {
+        data = JSON.parse(data);
+        $('#prod_id').val(data.prod_id);
+        $('#prod_nom').val(data.prod_nom);
+        $('#prod_desc').val(data.prod_desc);
+    });
+    $('#modalMantenimiento').modal('show');
   }
 
   function guardarEditar(e){
@@ -102,7 +111,7 @@ function eliminar(prod_id){
 
             $('#formProducto')[0].reset();
             $("#modalMantenimiento").modal('hide');
-            $('#productoData').DataTable().ajax.reload();
+            refreshTable();
 
             swal.fire(
                 'Registro!',
@@ -115,6 +124,8 @@ function eliminar(prod_id){
 
   $(document).on("click","#btnNuevoRegistro", function(){
     $('#modalTitulo').html('Nuevo Registro');
+    $('#formProducto')[0].reset();
+    $('#prod_id').val('');
     $('#modalMantenimiento').modal('show');
 });
 

@@ -12,6 +12,10 @@
                         <input id="prod_nom" class="form-control" type="text" name="prod_nom" required>
                     </div> 
 
+                    <div class="form-group">
+                        <label for="prod_desc" class="form-label">Descripción</label>
+                        <textarea class="form-control" placeholder="Ingrese Descripción" id="prod_desc" name="prod_desc" style="height: 100px"></textarea>
+                    </div> 
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-outline-primary"><i class="fas fa-save"></i> Guardar</button>
