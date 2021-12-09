@@ -96,7 +96,7 @@
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="../MntProducto/">Blank Page</a>
+                        <a class="collapse-item active" href="#">Blank Page</a>
                     </div>
                 </div>
             </li>
@@ -331,7 +331,7 @@
                     <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="productoData" width="100%" cellspacing="0">
-                                 <button type="button" id="btnNuevoRegistro" class="btn btn-outline-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
+                                 <button type="button" id="btnNuevoRegistro" class="btn btn-primary my-2"><i class="fas fa-pen-alt"></i> Nuevo Registro</button>
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>

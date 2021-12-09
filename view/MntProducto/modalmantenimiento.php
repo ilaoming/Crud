@@ -6,15 +6,15 @@
             </div>
             <form action="" method="post" id="formProducto">
                 <div class="modal-body">
-                <input type="hidden" name="prod_nom" id="prod_nom">
+                <input type="hidden" name="prod_id" id="prod_id">
                     <div class="form-group">
                         <label for="prod_nom" class="form-label">Nombre</label>
-                        <input id="prod_nom" class="form-control" type="text" name="prod_nom">
+                        <input id="prod_nom" class="form-control" type="text" name="prod_nom" required>
                     </div> 
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i> Guardar</button>
+                    <button type="submit" class="btn btn-outline-primary"><i class="fas fa-save"></i> Guardar</button>
 
                     <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" class="fas fa-times-circle"></span>

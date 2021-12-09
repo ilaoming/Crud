@@ -1,8 +1,8 @@
 var tabla;
 
 function init(){
-    $("#producto_form").on("submit",function(e){
-        guardaryeditar(e);	
+    $("#formProducto").on("submit",function(e){
+        guardarEditar(e);	
     });
 }
 
@@ -57,17 +57,66 @@ $(document).ready(function(){
 	}).DataTable();
 });
 
-function eliminar(prod_id) { 
-    console.log(prod_id);
- }
+function eliminar(prod_id){
+  swal.fire({
+    title: 'Eliminar',
+    text: "Desea Eliminar el Registro?",
+    icon: 'error',
+    showCancelButton: true,
+    confirmButtonText: 'Si, Borrar!',
+    cancelButtonText: 'No, Cancelar!',
+    reverseButtons: true
+}).then((result) => {
+    if (result.isConfirmed) {
+
+        $.post("../../controller/producto.php?op=eliminar",{prod_id:prod_id},function (data) {
+        });
+        $('#productoData').DataTable().ajax.reload();
+
+        
+        
+
+        swal.fire(
+            'Eliminado!',
+            'El registro se elimino correctamente.',
+            'success'
+        )
+    }
+})
+}
 
  function editar(prod_id) { 
     console.log(prod_id);
   }
 
+  function guardarEditar(e){
+    e.preventDefault();
+    var formData = new FormData($("#formProducto")[0]);
+    $.ajax({
+        url: "../../controller/producto.php?op=guardarEditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(datos){
+
+            $('#formProducto')[0].reset();
+            $("#modalMantenimiento").modal('hide');
+            $('#productoData').DataTable().ajax.reload();
+
+            swal.fire(
+                'Registro!',
+                'El registro correctamente.',
+                'success'
+            )
+        }
+    });
+}
 
   $(document).on("click","#btnNuevoRegistro", function(){
     $('#modalTitulo').html('Nuevo Registro');
     $('#modalMantenimiento').modal('show');
 });
-//init();
+
+
+init();

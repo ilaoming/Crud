@@ -41,7 +41,7 @@
         {   
             $conectar= parent::Conexion();
             parent::setNames();
-            $sql = "INSERT INTO tm_producto (prod_id, prod_nom, fech_crea, fech_modi, fech_elim, est) VALUES (NULL, 'Monitor', now(), NULL, NULL, 1)";
+            $sql = "INSERT INTO tm_producto (prod_id, prod_nom, fech_crea, fech_modi, fech_elim, est) VALUES (NULL, ?, now(), NULL, NULL, 1)";
             $sql = $conectar->prepare($sql);
             $sql->bindValue(1,$prod_nom);
             $sql->execute();
